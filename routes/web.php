@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
+    // if (Auth::check()) {
+    //     return "user logged in";
+    // }
+    //logging in
+    // if (Auth::attempt(['username' => $username, 'password' => $password])) {
+    //     return redirect()->intended('/admin');
+    // }
+    //logging out
+    // Auth::logout();
 });
 
 Auth::routes();
